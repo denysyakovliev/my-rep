@@ -3,10 +3,7 @@ import random
 
 words = ["hello", "work", "bike", "python"]
 selection_word = random.choice(words)
-attempts = input("Enter numbers of try:\n")
-if not isinstance(attempts, int):
-    attempts = int(input('Please enter a number value of tries:\n'))
-attempts = int(attempts)
+attempts = int(input("Enter numbers of try:\n"))
 part_pattern = ""
 count = 0
 
@@ -29,6 +26,7 @@ while True:
             print(re.sub(pattern, "*", selection_word))
             if re.sub(pattern, "*", selection_word) == selection_word:
                 print('You won!')
+                exit()
             continue
 
         else:
