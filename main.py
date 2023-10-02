@@ -3,7 +3,10 @@ import random
 
 words = ["hello", "work", "bike", "python"]
 selection_word = random.choice(words)
-attempts = int(input("Enter numbers of try:\n"))
+try:
+    attempts = int(input("Enter number of tries:\n"))
+except:
+    attempts = int(input("Enter a QUANTITATIVE number of tries:\n"))
 part_pattern = ""
 count = 0
 
