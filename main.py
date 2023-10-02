@@ -5,7 +5,7 @@ words = ["hello", "work", "bike", "python"]
 selection_word = random.choice(words)
 try:
     attempts = int(input("Enter number of tries:\n"))
-except:
+except ValueError:
     attempts = int(input("Enter a QUANTITATIVE number of tries:\n"))
 part_pattern = ""
 count = 0
@@ -55,4 +55,3 @@ while True:
             print("Invalid word")
 
             count += 1
-
