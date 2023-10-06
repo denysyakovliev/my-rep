@@ -5,11 +5,14 @@ words = ["hello", "work", "bike", "python"]
 selection_word = random.choice(words)
 try:
     attempts = int(input("Enter number of tries:\n"))
+    print(f"You have {attempts} attempts")
 except ValueError:
     try:
         attempts = int(input("Enter a QUANTITATIVE number of tries:\n"))
+        print(f"You now have {attempts} attempts")
     except ValueError:
         attempts = 3
+        print(f"You have {attempts} attempts")
 part_pattern = ""
 count = 0
 
@@ -31,7 +34,7 @@ while True:
 
             print(re.sub(pattern, "*", selection_word))
             if re.sub(pattern, "*", selection_word) == selection_word:
-                print('You   won!')
+                print(f"You   won! Secret word was '{selection_word}'")
                 exit()
             continue
 
@@ -49,7 +52,7 @@ while True:
 
         if elem == selection_word:
 
-            print("You won")
+            print(f"You won! Secret word was '{selection_word}'")
 
             exit()
 
