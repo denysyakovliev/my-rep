@@ -6,7 +6,10 @@ selection_word = random.choice(words)
 try:
     attempts = int(input("Enter number of tries:\n"))
 except ValueError:
-    attempts = int(input("Enter a QUANTITATIVE number of tries:\n"))
+    try:
+        attempts = int(input("Enter a QUANTITATIVE number of tries:\n"))
+    except ValueError:
+        attempts = 3
 part_pattern = ""
 count = 0
 
@@ -28,7 +31,7 @@ while True:
 
             print(re.sub(pattern, "*", selection_word))
             if re.sub(pattern, "*", selection_word) == selection_word:
-                print('You won!')
+                print('You   won!')
                 exit()
             continue
 
